@@ -36,7 +36,11 @@ public class Cliente {
 		return endereco;
 	}
 	public void setEndereco(String endereco) {
-		endereco = endereco;
+		this.endereco = endereco;
 	}
-
+	
+	public Integer getId() {
+		return id;
+	}
+	
 }
