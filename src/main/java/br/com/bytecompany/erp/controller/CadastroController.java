@@ -54,7 +54,7 @@ public class CadastroController {
 	
 	
 	@GetMapping("/save")
-	public String updateForm(@ModelAttribute("cliente") Cliente cliente) {		
+	public String updateForm(Cliente cliente) {		
 		clienteRepository.save(cliente);
 		return "redirect:/clientes";
 	}

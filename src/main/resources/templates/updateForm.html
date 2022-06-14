@@ -21,7 +21,7 @@
 
 		<form action="#" th:action="@{/save}" th:object="${cliente}" method="get">
 
-			<input class="form-control" type="text" th:field="*{id}" disabled>
+			<input class="form-control" type="hidden" th:field="*{id}">
 
 			<label>Nome</label><br>
 			<input class="form-control" type="text" th:field="*{nome}">
