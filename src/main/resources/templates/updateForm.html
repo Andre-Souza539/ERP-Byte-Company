@@ -19,7 +19,7 @@
 	<div class="container mx-auto" style="width: 50%;">
 		<h1> Atualizar Cliente </h1>
 
-		<form action="#" th:action="@{/save}" th:object="${cliente}" method="POST">
+		<form action="#" th:action="@{/save}" th:object="${cliente}" method="PUT">
 
 			<input class="form-control" type="hidden" th:field="*{id}">
 
