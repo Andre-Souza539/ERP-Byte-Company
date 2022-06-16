@@ -9,28 +9,33 @@
 		crossorigin="anonymous"></script>
 	<title>Cadastro Cliente</title>
 </head>
+<div class="container">
+	<header th:include="header"></header>
+</div>
 <div class="mx-auto" style="width: 50%;">
-	
+
 	<h1> Cadastro de Clientes</h1>
-	<form action="#" th:action="@{/salvar}" th:object="${cliente}" method="post" >
-	 
-	 <label>Nome</label><br>
-	 <input class="form-control" type="text" th:field="*{nome}">
-	  <span th:if="${#fields.hasErrors('nome')}"
-	  		th:errors="*{nome}"></span><br>
-	  <label>Endereco</label><br>
-	   <input class="form-control" type="text" th:field="*{endereco}">
-	  <span th:if="${#fields.hasErrors('endereco')}"
-	  		th:errors="*{endereco}"></span><br>
-	  
-	  <label>Cpf</label><br>
-	  <input class="form-control" type="text" th:field="*{cpf}">
-	  <span th:if="${#fields.hasErrors('cpf')}"
-	  		th:errors="*{cpf}"></span><br>
-	  		
-	  <input class="btn btn-primary" type="submit" value="Enviar">
-	   
+	<form action="#" th:action="@{/salvar}" th:object="${cliente}" method="post">
+
+		<label>Nome</label><br>
+		<input class="form-control" type="text" th:field="*{nome}">
+		<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span><br>
+		<label>Endereco</label><br>
+		<input class="form-control" type="text" th:field="*{endereco}">
+		<span th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}"></span><br>
+
+		<label>Cpf</label><br>
+		<input class="form-control" type="text" th:field="*{cpf}">
+		<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span><br>
+
+		<input class="btn btn-primary" type="submit" value="Enviar">
+
 	</form>
+	
+		<div class="container">
+	<header th:include="footer"></header>
+</div>
+
 
 </div>
 

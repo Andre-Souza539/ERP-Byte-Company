@@ -33,7 +33,7 @@
 
 
 
-	<div class="container mx-auto" style="width: 50%;">
+	<div class="container mx-auto" style="width: 100%;">
 		<h1>Listagem de Funcionarios</h1>
 
 		<table class="table">
@@ -48,13 +48,15 @@
 			</thead>
 
 			<th:block th:each="funcionario : ${funcionarios}">
-				<tr>
+				<tr style="vertical-align: middle;">
 					<td th:text="${funcionario.id}">...</td>
 					<td th:text="${funcionario.nome}">...</td>
 					<td th:text="${funcionario.cargo}">...</td>
 					<td th:text="${funcionario.salario}">...</td>
-					<td><a th:href="@{/funcionario/delete/} + ${funcionario.id}">Delete</a>|<a
-							th:href="@{/funcionario/edit/} + ${funcionario.id}">Update</a></td>
+					<td>
+					<a class="btn btn-outline-primary" th:href="@{/funcionario/edit/} + ${funcionario.id}">Update</a> |
+					<a class="btn btn-danger" th:href="@{/funcionario/delete/} + ${funcionario.id}">Delete</a>
+					</td>
 				</tr>
 
 			</th:block>
@@ -62,6 +64,10 @@
 		</table>
 		<a class="btn btn-primary" href="/cadastroFuncionario"> Add Funcionario </a>
 
+	</div>
+	
+	<div class="container">
+		<header th:include="footer"></header>
 	</div>
 
 </body>

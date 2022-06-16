@@ -9,28 +9,38 @@
 		crossorigin="anonymous"></script>
 	<title>Cadastro Funcionario</title>
 </head>
+<div class="container">
+	<header th:include="header"></header>
+</div>
 <div class="mx-auto" style="width: 50%;">
-	
+
+	<form action="#" th:action="@{/salvarFuncionario}" th:object="${funcionario}" method="post">
 	<h1> Cadastro de Funcionarios</h1>
-	<form action="#" th:action="@{/salvarFuncionario}" th:object="${funcionario}" method="post" >
-	 
-	 <label>Nome</label><br>
-	 <input class="form-control" type="text" th:field="*{nome}">
-	  <span th:if="${#fields.hasErrors('nome')}"
-	  		th:errors="*{nome}"></span><br>
-	  <label>Cargo</label><br>
-	   <input class="form-control" type="text" th:field="*{cargo}">
-	  <span th:if="${#fields.hasErrors('cargo')}"
-	  		th:errors="*{cargo}"></span><br>
-	  
-	  <label>Salario</label><br>
-	  <input class="form-control" type="text" th:field="*{salario}">
-	  <span th:if="${#fields.hasErrors('salario')}"
-	  		th:errors="*{salario}"></span><br>
-	  		
-	  <input class="btn btn-primary" type="submit" value="Enviar">
-	   
+
+		<label>Nome</label><br>
+		<input class="form-control" type="text" th:field="*{nome}">
+		<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span><br>
+		<label>Cargo</label><br>
+		<select class="form-control" th:field="*{cargo}">
+			<option value="" > Selecione o Cargo</option>
+			<option value="Analista">Analista</option>
+			<option value="Desenvolvedor">Desenvolvedor</option>
+			<option value="Tech Lead">Tech Lead</option>
+			<option value="Gerente">Gerente</option>
+			<option value="RH">RH</option>
+		</select>
+		<span th:if="${#fields.hasErrors('cargo')}" th:errors="*{cargo}"></span><br>
+
+		<label>Salario</label><br>
+		<input class="form-control" type="text" th:field="*{salario}">
+		<span th:if="${#fields.hasErrors('salario')}" th:errors="*{salario}"></span><br>
+
+		<input class="btn btn-primary" type="submit" value="Enviar">
+
 	</form>
+	<div class="container">
+	<header th:include="footer"></header>
+</div>
 
 </div>
 
