@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "funcionarios")
@@ -13,8 +14,11 @@ public class Funcionario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String nome; 
+	@NotNull
+	private String nome;
+	@NotNull
 	private String cargo;
+	@NotNull
 	private double salario;
 	
 	

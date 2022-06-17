@@ -17,20 +17,28 @@
 <body>
 
 	<div class="container mx-auto" style="width: 50%;">
-		<h1> Atualizar Cliente </h1>
+		<h1> Atualizar Funcionario </h1>
 
 		<form action="#" th:action="@{/saveFuncionario}" th:object="${funcionario}" method="get">
 
 			<input class="form-control" type="hidden" th:field="*{id}">
 
 			<label>Nome</label><br>
-			<input class="form-control" type="text" th:field="*{nome}">
+			<input class="form-control" type="text" th:field="*{nome}"><br>
 
-			<label>Endereco</label><br>
-			<input class="form-control" type="text" th:field="*{cargo}">
+			<label>Cargo</label><br>
+			<select class="form-control" th:field="*{cargo}">
+				<option value=""> Selecione o Cargo</option>
+				<option value="Analista">Analista</option>
+				<option value="Desenvolvedor">Desenvolvedor</option>
+				<option value="Tech Lead">Tech Lead</option>
+				<option value="Gerente">Gerente</option>
+				<option value="RH">RH</option>
+			</select>
+			<span th:if="${#fields.hasErrors('cargo')}" th:errors="*{cargo}"></span><br>
 
-			<label>Cpf</label><br>
-			<input class="form-control" type="text" th:field="*{salario}">
+			<label>Salário</label><br>
+			<input class="form-control" type="text" th:field="*{salario}"><br>
 
 			<input class="btn btn-primary" type="submit" value="Enviar">
 
